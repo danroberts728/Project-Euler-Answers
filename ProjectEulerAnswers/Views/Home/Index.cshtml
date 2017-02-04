@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Project Euler Answers</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Answers</h2>
+        <ul>
+            <li>@Html.ActionLink("44: Pentagon Numbers", "Index", "Answers", new { problem = 44 }, null)</li>
+            <li>@Html.ActionLink("50: Consecutive Prime Sum", "Index", "Answers", new { problem = 50 }, null)</li>
+            <li>@Html.ActionLink("51: Prime Digit Replacements", "Index", "Problem51")</li>
+            <li>@Html.ActionLink("54: Poker Hands", "Index", "Answers", new { problem = 54 }, null)</li>
+            <li>@Html.ActionLink("95: Amicable Chains", "Index", "Problem95")</li>
+        </ul>
+    </div>
+</div>
