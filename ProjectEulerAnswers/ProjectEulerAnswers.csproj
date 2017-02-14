@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,6 +169,10 @@
     <Compile Include="Controllers\AnswersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Problem51Controller.cs" />
+    <Compile Include="Controllers\Problem53Controller.cs" />
+    <Compile Include="Controllers\Problem55Controller.cs" />
+    <Compile Include="Controllers\Problem56Controller.cs" />
+    <Compile Include="Controllers\Problem60Controller.cs" />
     <Compile Include="Controllers\Problem95Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -216,6 +221,10 @@
     <Content Include="Views\Answers\_Problem54.cshtml" />
     <Content Include="Views\Problem51\Index.cshtml" />
     <Content Include="Views\Problem95\Index.cshtml" />
+    <Content Include="Views\Problem53\Index.cshtml" />
+    <Content Include="Views\Problem55\Index.cshtml" />
+    <Content Include="Views\Problem56\Index.cshtml" />
+    <Content Include="Views\Problem60\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
