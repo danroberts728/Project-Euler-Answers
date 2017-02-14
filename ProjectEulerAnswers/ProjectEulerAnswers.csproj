@@ -172,6 +172,7 @@
     <Compile Include="Controllers\Problem53Controller.cs" />
     <Compile Include="Controllers\Problem55Controller.cs" />
     <Compile Include="Controllers\Problem56Controller.cs" />
+    <Compile Include="Controllers\Problem57Controller.cs" />
     <Compile Include="Controllers\Problem60Controller.cs" />
     <Compile Include="Controllers\Problem95Controller.cs" />
     <Compile Include="Global.asax.cs">
@@ -225,6 +226,7 @@
     <Content Include="Views\Problem55\Index.cshtml" />
     <Content Include="Views\Problem56\Index.cshtml" />
     <Content Include="Views\Problem60\Index.cshtml" />
+    <Content Include="Views\Problem57\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
