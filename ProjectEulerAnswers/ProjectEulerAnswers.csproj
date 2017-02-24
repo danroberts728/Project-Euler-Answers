@@ -173,7 +173,12 @@
     <Compile Include="Controllers\Problem55Controller.cs" />
     <Compile Include="Controllers\Problem56Controller.cs" />
     <Compile Include="Controllers\Problem57Controller.cs" />
+    <Compile Include="Controllers\Problem59Controller.cs" />
     <Compile Include="Controllers\Problem60Controller.cs" />
+    <Compile Include="Controllers\Problem61Controller.cs" />
+    <Compile Include="Controllers\Problem62Controller.cs" />
+    <Compile Include="Controllers\Problem63Controller.cs" />
+    <Compile Include="Controllers\Problem64Controller.cs" />
     <Compile Include="Controllers\Problem95Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -227,6 +232,11 @@
     <Content Include="Views\Problem56\Index.cshtml" />
     <Content Include="Views\Problem60\Index.cshtml" />
     <Content Include="Views\Problem57\Index.cshtml" />
+    <Content Include="Views\Problem59\Index.cshtml" />
+    <Content Include="Views\Problem61\Index.cshtml" />
+    <Content Include="Views\Problem62\Index.cshtml" />
+    <Content Include="Views\Problem63\Index.cshtml" />
+    <Content Include="Views\Problem64\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
