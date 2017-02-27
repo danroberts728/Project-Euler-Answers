@@ -180,6 +180,8 @@
     <Compile Include="Controllers\Problem63Controller.cs" />
     <Compile Include="Controllers\Problem64Controller.cs" />
     <Compile Include="Controllers\Problem66Controller.cs" />
+    <Compile Include="Controllers\Problem68Controller.cs" />
+    <Compile Include="Controllers\Problem69Controller.cs" />
     <Compile Include="Controllers\Problem95Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,6 +241,8 @@
     <Content Include="Views\Problem63\Index.cshtml" />
     <Content Include="Views\Problem64\Index.cshtml" />
     <Content Include="Views\Problem66\Index.cshtml" />
+    <Content Include="Views\Problem68\Index.cshtml" />
+    <Content Include="Views\Problem69\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
