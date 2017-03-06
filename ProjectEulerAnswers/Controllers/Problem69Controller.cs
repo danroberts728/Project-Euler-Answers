@@ -10,30 +10,26 @@ namespace ProjectEulerAnswers.Controllers
 {
     public class Problem69Controller : Controller
     {
-        int[] Primes { get; set; }
+        IEnumerable<int> PrimeNumbers { get; set; }
+
         // GET: Problem69
         public ActionResult Index()
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            string answer = string.Empty;
+            string answer = string.Empty;            
 
-            Primes = ESieve(2, 100000);
-
-
-            int maxRatio = 0;
-            int maxN = 0;
-            for(int n = 1; n <= 1000000; n++)
+            PrimeNumbers = Primes(1000000);
+            double result = 1;
+            foreach(int p in PrimeNumbers)
             {
-                int totient = Totient(n);
-                int ratio = n / totient;
-                if(ratio > maxRatio)
+                if (result*p >= 1000000)
                 {
-                    maxRatio = ratio;
-                    maxN = n;
+                    break;
                 }
+                result *= p;
             }
-            answer = maxN.ToString();
+            answer = result.ToString();
 
             stopwatch.Stop();
             ViewBag.Answer = $"{answer}";
@@ -43,72 +39,57 @@ namespace ProjectEulerAnswers.Controllers
             return View();
         }
 
-        private int Totient(int n)
+        private int phi(int n)
         {
-            int totient = n;
-            int currentNum = n;
-            int temp = 0;
-            int p = 0;
-            int p_m1 = 0;
-
-            int i = 2;
-            while (Primes[i] < n)
+            double result = n;
+            foreach(int p in PrimeNumbers)
             {
-                if (Primes[i] > currentNum)
+                if (p*p > n)
                 {
                     break;
                 }
-                temp = currentNum / p;
-                if (temp * Primes[i] == currentNum)
+                if(n % p == 0)
                 {
-                    currentNum = temp;
-                    i--;
-                    if(p_m1 != p)
+                    while(n % p == 0)
                     {
-                        p_m1 = p;
-                        totient -= totient / p;
+                        n /= p;
                     }
+                    result *= 1.0 - (1.0 / (double)p);
                 }
             }
-            return totient;
+            if(n > 1)
+            {
+                result *= 1.0 - (1.0 / (double)n);
+            }
+
+            return (int) result;
         }
 
-        public int[] ESieve(int lowerLimit, int upperLimit)
+        public static IEnumerable<int> Primes(int bound)
         {
+            if (bound < 2) yield break;
+            //The first prime number is 2
+            yield return 2;
 
-            int sieveBound = (int)(upperLimit - 1) / 2;
-            int upperSqrt = ((int)Math.Sqrt(upperLimit) - 1) / 2;
-
-            BitArray PrimeBits = new BitArray(sieveBound + 1, true);
-
-            for (int i = 1; i <= upperSqrt; i++)
+            BitArray composite = new BitArray((bound - 1) / 2);
+            int limit = ((int)(Math.Sqrt(bound)) - 1) / 2;
+            for (int i = 0; i < limit; i++)
             {
-                if (PrimeBits.Get(i))
+                if (composite[i]) continue;
+                //The first number not crossed out is prime
+                int prime = 2 * i + 3;
+                yield return prime;
+                //cross out all multiples of this prime, starting at the prime squared
+                for (int j = (prime * prime - 2) >> 1; j < composite.Count; j += prime)
                 {
-                    for (int j = i * 2 * (i + 1); j <= sieveBound; j += 2 * i + 1)
-                    {
-                        PrimeBits.Set(j, false);
-                    }
+                    composite[j] = true;
                 }
             }
-
-            List<int> numbers = new List<int>((int)(upperLimit / (Math.Log(upperLimit) - 1.08366)));
-
-            if (lowerLimit < 3)
+            //The remaining numbers not crossed out are also prime
+            for (int i = limit; i < composite.Count; i++)
             {
-                numbers.Add(2);
-                lowerLimit = 3;
+                if (!composite[i]) yield return 2 * i + 3;
             }
-
-            for (int i = (lowerLimit - 1) / 2; i <= sieveBound; i++)
-            {
-                if (PrimeBits.Get(i))
-                {
-                    numbers.Add(2 * i + 1);
-                }
-            }
-
-            return numbers.ToArray();
         }
     }
 }
