@@ -182,13 +182,16 @@
     <Compile Include="Controllers\Problem66Controller.cs" />
     <Compile Include="Controllers\Problem68Controller.cs" />
     <Compile Include="Controllers\Problem69Controller.cs" />
+    <Compile Include="Controllers\Problem70Controller.cs" />
     <Compile Include="Controllers\Problem95Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Hand.cs" />
+    <Compile Include="Models\ProjectEulerAnswer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utility\PrimesUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -243,6 +246,7 @@
     <Content Include="Views\Problem66\Index.cshtml" />
     <Content Include="Views\Problem68\Index.cshtml" />
     <Content Include="Views\Problem69\Index.cshtml" />
+    <Content Include="Views\Problem70\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
