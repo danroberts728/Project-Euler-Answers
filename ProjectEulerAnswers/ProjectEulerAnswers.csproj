@@ -183,6 +183,9 @@
     <Compile Include="Controllers\Problem68Controller.cs" />
     <Compile Include="Controllers\Problem69Controller.cs" />
     <Compile Include="Controllers\Problem70Controller.cs" />
+    <Compile Include="Controllers\Problem71Controller.cs" />
+    <Compile Include="Controllers\Problem72Controller.cs" />
+    <Compile Include="Controllers\Problem73Controller.cs" />
     <Compile Include="Controllers\Problem95Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -192,6 +195,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utility\PrimesUtility.cs" />
+    <Compile Include="Utility\Rational.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -247,6 +251,9 @@
     <Content Include="Views\Problem68\Index.cshtml" />
     <Content Include="Views\Problem69\Index.cshtml" />
     <Content Include="Views\Problem70\Index.cshtml" />
+    <Content Include="Views\Problem71\Index.cshtml" />
+    <Content Include="Views\Problem72\Index.cshtml" />
+    <Content Include="Views\Problem73\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
